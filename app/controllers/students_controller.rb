@@ -25,7 +25,11 @@ class StudentsController < ApplicationController
   end
 
   def self.search(name)
-    @student = self.all.detect do { |student| student.name == name }
+    if name.empty?
+      return Student.all
+    else
+      @student = self.all.detect do { |student| student.name == name }
+    end
   end
 
   def student_params
