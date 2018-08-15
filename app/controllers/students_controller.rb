@@ -22,6 +22,7 @@ class StudentsController < ApplicationController
 
   def index
     @students = Student.all
+    @student = self.search(name)
   end
 
   def self.search(name)
