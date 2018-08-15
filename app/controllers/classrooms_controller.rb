@@ -2,7 +2,7 @@ class ClassroomsController < ApplicationController
   def show
     @classroom = Classroom.find(params[:id])
 
-    @classroom.students.each do |student|
+    @classroom.students.collect do |student|
       @student
     end
   end
