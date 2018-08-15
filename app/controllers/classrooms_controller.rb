@@ -1,7 +1,6 @@
 require 'pry'
 
 class ClassroomsController < ApplicationController
-  binding.pry
   def show
     @classroom = Classroom.find(params[:id])
 
