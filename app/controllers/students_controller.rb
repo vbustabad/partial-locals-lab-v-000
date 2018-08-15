@@ -29,7 +29,7 @@ class StudentsController < ApplicationController
     if name.empty?
       return Student.all
     else
-      @student = self.all.detect do { |student| student.name == name }
+      @student = self.all.collect do { |student| student.name == name }
     end
   end
 
