@@ -24,6 +24,10 @@ class StudentsController < ApplicationController
     @students = Student.all
   end
 
+  def self.search(name)
+    @student = self.all.detect do { |student| student.name == name }
+  end
+
   def student_params
     params.require(:student).permit(:name, :birthday, :hometown)
   end
