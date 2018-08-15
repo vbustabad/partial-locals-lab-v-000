@@ -1,8 +1,8 @@
 require 'pry'
 
 class ClassroomsController < ApplicationController
+  binding.pry
   def show
-    binding.pry
     @classroom = Classroom.find(params[:id])
 
     @classroom.students.collect do |student|
