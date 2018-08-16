@@ -22,15 +22,6 @@ class StudentsController < ApplicationController
 
   def index
     @students = Student.all
-    self.search(name)
-  end
-
-  def self.search(name)
-    if name.empty?
-      return self.all
-    else
-      @student = self.all.collect do { |student| student.name == name }
-    end
   end
 
   def student_params
