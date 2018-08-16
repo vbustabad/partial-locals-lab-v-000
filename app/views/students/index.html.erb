@@ -1,1 +1,9 @@
+<% def Student.search(name) %>
+  <% if name.empty? %>
+    <%= return self.all %>
+  <% else %>
+    <%= @student = self.all.collect do { |student| student.name == name } %>
+  <% end %>
+<% end %>
+
 <%= render partial: 'student', locals: {student: @student} %>
