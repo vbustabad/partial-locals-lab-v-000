@@ -1,3 +1,5 @@
+require 'pry'
+
 class StudentsController < ApplicationController
   def new
     @student = Student.new
@@ -22,14 +24,11 @@ class StudentsController < ApplicationController
 
   def index
     if params[:search]
+      binding.pry
       @student = Student.search(params[:search])
     else
       @students = Student.all
     end
-  end
-
-  def self.search(search)
-    where('name LIKE ?', "%#{search}%")
   end
 
   def student_params
