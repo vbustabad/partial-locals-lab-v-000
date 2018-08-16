@@ -29,7 +29,7 @@ class StudentsController < ApplicationController
   end
 
   def self.search(search)
-      where('name LIKE ?', "%#{search}%")
+    where('name LIKE ?', "%#{search}%")
   end
 
   def student_params
