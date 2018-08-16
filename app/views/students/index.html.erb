@@ -1,9 +1,6 @@
-<% def Student.search(name) %>
-  <% if name.empty? %>
-    <%= return self.all %>
-  <% else %>
-    <%= @student = self.all.collect do { |student| student.name == name } %>
-  <% end %>
+<% form_tag(students_path method: :get) do %>
+  <% Name <%= text_field_tag :name, params[:name] %> %>
+  <%= submit_tag 'Search' %>
 <% end %>
 
 <%= render partial: 'student', locals: {student: @student} %>
