@@ -28,6 +28,14 @@ class StudentsController < ApplicationController
     end
   end
 
+  # def self.search(name)
+  #   if params[:name]
+  #     @student = Student.where('name LIKE ?', "%#{params[:name]}%")
+  #   else
+  #     @student = Student.all
+  #   end
+  # end
+
   def student_params
     params.require(:student).permit(:name, :birthday, :hometown)
   end
